@@ -1,0 +1,20 @@
+
+.hidden
+{
+	display: none;
+}
+
+i{
+	margin-right: 10px;
+	/*color:white;*/
+}
+
+#add-task-header
+{
+	margin-top: 20px;
+}
+
+#add-task-header i:hover
+{
+	cursor: pointer;
+}
