@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +9,73 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	
+	<!-- container div begins here -->
+	<div class="container"> 
 
-	<div class="container">
+		<!-- header begins here -->
 		<header>
 			<h2><i class="fa fa-tasks"></i>Todo Application</h2>
 			<small>A simple todo application</small>
 		</header>
+		<!-- header ends here -->
 
-		<hr>
 
-		<div class="inner-container">
-			<h3 id="no-task-header"><i class="fa  fa-thumbs-o-up"></i>No Tasks for now!</h3>
 
-			<h4 id="add-task-header"><i class="fa fa-plus-square"></i> Add Tasks</h4>
+		<hr> 
+	
+		<!-- Inner container div begins here -->
+		<div class="inner-container" ng-controller="todoController">
+
+
+			<h3 id="no-task-header" class="{{isEmpty()}}"><i class="fa  fa-thumbs-o-up"></i>No Tasks for now! <i class="fa fa-smile-o"></i></h3>  <!-- No task header -->
+
+
+			<h3 id="task-header" class="{{hasToDo()}}"><i class="fa  fa-thumbs-o-down"></i> {{getTotalTodos()}} tasks remaining <i class="fa fa-frown-o"></i></h3> <!-- task header -->
+
+			<!-- Task details container begins here -->
+			<div class="task-details">
+				
+				<!-- list containing list of tasks  begins here-->
+				<ul class="list-unstyled" class="">
+					<li ng-repeat="todo in todos" ><h4><i class="fa fa-minus-square" ng-click="removeTask(todo.id)" title="Remove task" ></i>{{todo.task}} </h4> <small>time : {{todo.time}}</small></li>
+				</ul>
+				<!-- list containing list of tasks  ends here-->
+
+
+			</div>
+			<!-- Task details ends here -->
+
+			
+			<!-- form container begins here which reads the details of new task -->
+			<div class="form-container {{showForm}}">
+					<h4>Enter task details</h4>
+					<form class="form form-inline" role="form">
+						 <div class="form-group">
+    						<input type="text" class="form-control" placeholder="Enter Task" title="Enter task" ng-model="task" required>
+  						</div>
+						<div class="form-group">	
+						   <input type="time" class="form-control" title="Enter time" ng-model="time" required>
+						</div>
+  					<button class="btn btn-default" title="Add task" ng-click="addTask()">Add task</button>
+					</form>
+			</div>
+			<!-- form container ends here which reads the details of new task -->
+				
+			<br>
+			<h4 id="add-task-header" title="Add task" ng-click="displayForm()" ><i class="fa fa-plus-square" ></i> Add Tasks</h4>
+
+
 		</div>
-	</div>
+		<!-- inner container div ends here -->
 
+		
+	</div>
+	<!-- container div ends here -->
 
 	
 	<!-- Javascript includes -->
+	<script src="js/angular.js"></script>
 	<script src="js/todo.js"></script>
 
 </body>

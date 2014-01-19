@@ -1,20 +1,137 @@
 
-.hidden
+.done-true
 {
-	display: none;
+	text-decoration: line-through;
 }
 
 i{
 	margin-right: 10px;
-	/*color:white;*/
 }
 
 #add-task-header
 {
 	margin-top: 20px;
+	background: inherit;
+	padding: 17px;
+	width: 200px;
+	cursor: pointer;
+	background-color: rgba(51,51,51,0.9);
+	border-color: #adadad;
+	color: white;
+
+	-webkit-transition: all linear 0.3s;
+	-moz-transition: all linear 0.3s;
+	-o-transition: all linear 0.3s;
+	-ms-transition: all linear 0.3s;
+	transition: all linear 0.3s;
 }
 
-#add-task-header i:hover
+
+div.form-container
 {
-	cursor: pointer;
+	height:90px;
+	margin-top: 20px;
+	width: 600px;
+
+	border: 1px solid #d4d4d4;
+	text-align: center;
+	border-radius: 4px;
 }
+
+div.form-container h4
+{
+	text-align: center;
+	width: 370px;
+}
+
+
+input[type="time"]
+{
+	width: 130px;
+}
+
+.show-true
+{
+	display: inherit;
+}
+
+.show-fasle
+{
+	display: none;
+}
+
+.show-fasle,.show-true
+{
+	
+}
+
+div.task-details
+{
+	padding: 5px;
+
+}
+
+
+footer
+{
+	margin-bottom: 0px;
+}
+
+div.task-details li
+{
+	padding: 2px;
+	padding-left: 5px;
+	margin-top: 8px;
+	color: white;
+	background-color: rgba(51,51,51,0.9);
+	border-color: #adadad;
+	cursor: pointer;
+	width: 400px;
+
+	-webkit-transition: all linear 0.3s;
+	-moz-transition: all linear 0.3s;
+	-o-transition: all linear 0.3s;
+	-ms-transition: all linear 0.3s;
+	transition: all linear 0.3s;
+}
+
+div.task-details li:hover , #add-task-header:hover
+{
+	color: white;
+	background-color: #333333;
+	border-color: #adadad;
+
+}
+
+@media screen and (max-width: 767px) {
+	#add-task-header
+	{
+		margin-top: 80px;
+		width: 100%;
+	}
+
+	div.form-container
+	{
+		width: 250px;
+		border: none;
+	}
+
+	div.form-container h4
+	{
+		text-align: left;
+		margin-left: 0px;
+
+	}
+
+	input[type="time"]
+	{
+		width: 100%;
+	}
+
+	div.task-details li
+	{
+		width: 100%;
+	}
+}
+
+
