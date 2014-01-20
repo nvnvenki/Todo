@@ -4,9 +4,17 @@
 	text-decoration: line-through;
 }
 
-i{
+i
+{
 	margin-right: 10px;
 }
+
+header
+{
+	text-align: center;
+}
+
+
 
 #add-task-header
 {
@@ -15,7 +23,7 @@ i{
 	padding: 17px;
 	width: 200px;
 	cursor: pointer;
-	background-color: rgba(51,51,51,0.9);
+	background-color: rgba(51,51,51,0.8);
 	border-color: #adadad;
 	color: white;
 
@@ -77,13 +85,13 @@ footer
 	margin-bottom: 0px;
 }
 
-div.task-details li
+div.task-details li.todos
 {
 	padding: 2px;
 	padding-left: 5px;
 	margin-top: 8px;
 	color: white;
-	background-color: rgba(51,51,51,0.9);
+	background-color: rgba(51,51,51,0.8);
 	border-color: #adadad;
 	cursor: pointer;
 	width: 400px;
@@ -95,7 +103,7 @@ div.task-details li
 	transition: all linear 0.3s;
 }
 
-div.task-details li:hover , #add-task-header:hover
+div.task-details li.todos:hover , #add-task-header:hover
 {
 	color: white;
 	background-color: #333333;
@@ -128,7 +136,7 @@ div.task-details li:hover , #add-task-header:hover
 		width: 100%;
 	}
 
-	div.task-details li
+	div.task-details li.todos
 	{
 		width: 100%;
 	}
