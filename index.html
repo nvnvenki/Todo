@@ -28,10 +28,10 @@
 		<div class="inner-container" ng-controller="todoController">
 
 
-			<h3 id="no-task-header" class="{{isEmpty()}}"><i class="fa  fa-thumbs-o-up"></i>No Tasks for now! <i class="fa fa-smile-o"></i></h3>  <!-- No task header -->
+			<h3 id="no-task-header" class="{{showNoTaskHeader()}}"><i class="fa  fa-thumbs-o-up"></i>No Tasks for now! <i class="fa fa-smile-o"></i></h3>  <!-- No task header -->
 
 
-			<h3 id="task-header" class="{{hasToDo()}}"><i class="fa  fa-thumbs-o-down"></i> {{getTotalTodos()}} tasks remaining <i class="fa fa-frown-o"></i></h3> <!-- task header -->
+			<h3 id="task-header" class="{{showTaskHeader()}}"><i class="fa  fa-thumbs-o-down"></i> {{getTotalTodos()}} tasks remaining <i class="fa fa-frown-o"></i></h3> <!-- task header -->
 
 			<!-- Task details container begins here -->
 			<div class="task-details">

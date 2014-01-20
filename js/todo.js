@@ -3,7 +3,6 @@ var id = 0
 
 function todoController($scope){
 	console.log("In todoController")
-
 	$scope.todos = []
 	
 
@@ -21,11 +20,11 @@ function todoController($scope){
 		return $scope.todos.length
 	}
 
-	$scope.isEmpty = function(){
+	$scope.showNoTaskHeader = function(){
 		return $scope.todos.length == 0 ? "show" : "hide"
 	}
 
-	$scope.hasToDo = function(){
+	$scope.showTaskHeader = function(){
 
 		return $scope.todos.length > 0 ? "show" : "hide"
 	}
