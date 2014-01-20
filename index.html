@@ -42,7 +42,8 @@
 					<li>
 						<!-- form container begins here which reads the details of new task -->
 						<div class="form-container {{showForm}}">
-								<h4>Enter task details</h4>
+
+								<i class="fa fa-times" title="close" ng-click="hideForm()"></i><h4>Enter task details</h4>
 								<form class="form form-inline" role="form">
 									 <div class="form-group">
 			    						<input type="text" class="form-control" placeholder="Enter Task" title="Enter task" ng-model="task" required>
@@ -65,26 +66,9 @@
 			</div>
 			<!-- Task details ends here -->
 
-			
-			<!-- form container begins here which reads the details of new task -->
-			<!-- <div class="form-container {{showForm}}">
-					<h4>Enter task details</h4>
-					<form class="form form-inline" role="form">
-						 <div class="form-group">
-    						<input type="text" class="form-control" placeholder="Enter Task" title="Enter task" ng-model="task" required>
-  						</div>
-						<div class="form-group">	
-						   <input type="time" class="form-control" title="Enter time" ng-model="time" required>
-						</div>
-  					<button class="btn btn-default" title="Add task" ng-click="addTask()">Add task</button>
-					</form>
-			</div> -->
-			<!-- form container ends here which reads the details of new task -->
 				
 			<br>
-			<!-- <h4 id="add-task-header" title="Add task" ng-click="displayForm()" ><i class="fa fa-plus-square" ></i> Add Tasks</h4> -->
-
-
+			
 		</div>
 		<!-- inner container div ends here -->
 

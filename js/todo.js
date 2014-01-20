@@ -34,6 +34,10 @@ function todoController($scope){
 		$scope.showForm = "show"
 	}
 
+	$scope.hideForm = function(){
+		$scope.showForm = "hide"
+	}
+
 	$scope.addTask = function(){
 		// console.log($scope.time)
 		if($scope.task && $scope.time)
