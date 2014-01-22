@@ -19,14 +19,17 @@ def apply_filtering(objects, request):
 def delete_todo(request):
     data = request.body 
     data = json.loads(data)
-    print data['task_name']
-    obj = Todo.objects.get(task_name=data['task_name'])
-    obj.delete()
-    
     response = HttpResponse()
     response['Access-Control-Allow-Origin'] = '*'
-    response.content = "Deleted"
+    
     response['status'] = "200"
+    print data['task_name']
+    obj = Todo.objects.get(task_name=data['task_name'])
+    if not obj:
+        response.content = "Task absent"
+        return response
+    obj.delete()
+    response.content = "Deleted"
     return response
     
 def get_todo(request, task_id):
