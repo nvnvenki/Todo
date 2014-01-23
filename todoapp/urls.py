@@ -7,7 +7,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('todoapp.views',
      url(r'^$', "index"),
-     url(r'^todos/(?P<task_id>\d+)', 'get_todo'),
-     url(r'^todos$', 'todos_list'),
+#     url(r'^todos/(?P<task_id>\d+)', 'get_todo'),
+#     url(r'^todos$', 'todos_list'),
      
 )

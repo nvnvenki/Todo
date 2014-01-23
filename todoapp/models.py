@@ -5,4 +5,4 @@ from django.db import models
 class Todo(models.Model):
     task_name = models.CharField(max_length=100)
     time = models.CharField(max_length=20)
-    
+    priority = models.CharField(max_length=10)

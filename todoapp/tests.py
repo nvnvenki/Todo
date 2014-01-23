@@ -1,7 +1,7 @@
 from django.test.client import Client
 import json
 from django.test.testcases import TestCase
-from models import Todo
+
 # Create your tests here.
 class TestTodo(TestCase):
     
@@ -24,5 +24,3 @@ class TestTodo(TestCase):
         response_delete = self.client.delete("http://127.0.0.1:8000/todos", json.dumps({'task_name':'task1'}),"text/json")
         print response_delete
     
-    
-        

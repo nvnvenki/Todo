@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Todo Application</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-	
+	{% verbatim %}
 	<!-- container div begins here -->
 	<div class="container"> 
 
@@ -51,7 +51,7 @@
 									</div>
 									<div class="form-group">	
 									   <label for="priority"  id="priority" >Priority : <select name="priority" class="form-control" ng-model="priority">
-									   			<option value="high" selected>High</option>
+									   			<option value="high" selected="selected">High</option>
 									   			<option value="medium">Medium</option>
 									   			<option value="low">Low</option>
 									   	</select></label>
@@ -81,10 +81,10 @@
 	</div>
 	<!-- container div ends here -->
 
-	
+	{% endverbatim %}
 	<!-- Javascript includes -->
-	<script src="js/angular.js"></script>
-	<script src="js/todo.js"></script>
-
+	<script src="../static/js/angular.js"></script>
+	<script src="../static/js/todo.js"></script>
+	
 </body>
 </html>

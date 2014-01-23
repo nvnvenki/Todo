@@ -19,7 +19,7 @@ function todoController($scope, $http){
 		console.log(JSON.stringify({task_name : $scope.task_name, time: $scope.time, priority: $scope.priority}))
 		$http({
 		    method: 'POST',
-		    url: 'http://127.0.0.1:8000/api/v0/todos/',
+		    url: '/api/v0/todos/',
 		    data:  JSON.stringify({task_name : $scope.task_name, time: $scope.time })
 		    // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).
@@ -35,7 +35,7 @@ function todoController($scope, $http){
 	
 	$scope.getTodos = function(){
 
-		$http.get('http://127.0.0.1:8000/api/v0/todos/?format=json').
+		$http.get('/api/v0/todos/?format=json').
 		success(function(response){
 			$scope.todos = $scope.todos.concat(response['objects'])
 		}).
@@ -46,15 +46,14 @@ function todoController($scope, $http){
 	}
 
 	$scope.deleteTodo = function(id){
-		alert(id)
 		$http({
 		    method: 'DELETE',
-		    url: 'http://127.0.0.1:8000/api/v0/todos/' + id + "/",
+		    url: '/api/v0/todos/' + id + "/",
 		    headers : {'Content-Type' : "application/json"}
 		}).
 		success(function(response){
-			// $scope.todos = []
-			// $scope.getTodos()
+			$scope.todos = []
+			$scope.getTodos()
 			console.log(response)
 		}).
 		error(function(response){

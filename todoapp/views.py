@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 from django.http.response import HttpResponseNotAllowed, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -6,10 +7,10 @@ from todoapp.models import Todo
 
 # Create your views here.
 
-VALID_FILTERS = []
+VALID_ORDERING_FIELDS = ["priority","id"]
 
 def index(request):
-    return HttpResponse("Hello World..!!!")
+    return render_to_response('index.html')
 
 def apply_filtering(objects, request):
     if not objects:
@@ -23,8 +24,8 @@ def delete_todo(request):
     response['Access-Control-Allow-Origin'] = '*'
     
     response['status'] = "200"
-    print data['task_name']
-    obj = Todo.objects.get(task_name=data['task_name'])
+    print data['id']
+    obj = Todo.objects.get(pk=data['id'])
     if not obj:
         response.content = "Task absent"
         return response
@@ -44,13 +45,17 @@ def get_todo(request, task_id):
 def apply_ordering(objects, request):
     if not objects:
         return []
+    if 'order_by' in request.GET:
+        field_name = request.GET['order_by'][1:]
+        print field_name
     return objects
 
 def get_dict_form_object(obj):
     return {
             'task_id' : obj.id,
             'task_name' : obj.task_name,
-            'time' : obj.time
+            'time' : obj.time,
+            'priority':obj.priority
             }
 
 def serialize(objects):
