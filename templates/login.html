@@ -1,25 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="login">
 <head>
 	<meta charset="UTF-8">
 	<title>Todo Application | Login</title>
 	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-	{% verbatim %}
-	<div class="container">
-		<form class="form-signin" role="form">
-	        <h2 class="form-signin-heading">Please sign in</h2>
-	        <input type="text" class="form-control" placeholder="Email address" required autofocus>
-	        <input type="password" class="form-control" placeholder="Password" required>
-	        <button class="btn btn-lg " type="submit">Sign in</button>
-      	</form>
+	
+	<div class="container" ng-controller="loginController">
+
+		<header>
+			<h2><i class="fa fa-tasks"></i>Todo Application</h2>
+			<small>A simple todo application</small>
+		</header>
+		{% verbatim %}
+		<div class="form-container form-horizontal sign-in {{showSignin}}" role="form">
+			<h2>Sign in<i class="fa fa-smile-o"></i></h2>
+			
+			<div class="form-group">
+			    <label for="email" class="col-sm-2 control-label">Username</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="email" placeholder="username" required ng-model="username">
+			    </div>
+			</div>
+
+			<div class="form-group">
+			    <label for="password" class="col-sm-2 control-label">Password</label>
+			    <div class="col-sm-10">
+			      <input type="password" class="form-control" id="password" placeholder="Password" required ng-model="password">
+			    </div>
+			</div>
+			
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-9">
+			      <button type="submit" class="btn btn-default btn-lg" id="button-signin" ng-click="signIn()">Sign in</button>
+			      <small id="create-account-text" ng-click="showSigninSignUp()">Create a new account!</small>
+			    </div>
+
+			</div>
+
+		</div>
+
+		<div class="form-container form-horizontal sign-up {{showSignup}}" role="form">
+			<h2>Sign Up<i class="fa fa-smile-o"></i></h2>
+			<div class="form-group">
+			    <label for="email" class="col-sm-2 control-label">Username</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="email" placeholder="username" required ng-model="username_new">
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="password" class="col-sm-2 control-label">Password</label>
+			    <div class="col-sm-10">
+			      <input type="password" class="form-control" id="password" placeholder="Password" required ng-model="password_new">
+			    </div>
+			</div>
+			
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-9">
+			      <button type="submit" class="btn btn-default btn-lg" id="button-signup" ng-click="signUp()">Sign up</button>
+			      <small id="signin-account-text" ng-click="showSigninSignUp()">Already have a account?</small>
+			    </div>
+
+			</div>
+
+		</div>
+		{% endverbatim %}
 	</div>
 	
-	{% endverbatim %}
+	
 	<!-- javascript includes -->
 	<script src="../static/js/angular.js"></script>
+	<script src="../static/js/jquery.js"></script>
+	<script src="../static/js/toast.js"></script>
+	<script src="../static/js/angular-route.js"></script>
+	<script src="../static/js/angular-cookies.js"></script>
+	<script src="../static/js/login.js"></script>
+	
 
 </body>
 </html>

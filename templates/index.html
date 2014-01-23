@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="todo">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +11,21 @@
 <body>
 	{% verbatim %}
 	<!-- container div begins here -->
-	<div class="container"> 
+	<div class="container" ng-controller="todoController"> 
 
 		<!-- header begins here -->
 		<header>
 			<h2><i class="fa fa-tasks"></i>Todo Application</h2>
 			<small>A simple todo application</small>
+			<small id="logout" ng-click="deleteCookie()">Logout</small>
 		</header>
 		<!-- header ends here -->
 
 		<hr> 
 	
 		<!-- Inner container div begins here -->
-		<div class="inner-container" ng-controller="todoController">
-
+		<div class="inner-container" >
+			
 
 			<h3 id="no-task-header" class="{{showNoTaskHeader()}}"><i class="fa  fa-thumbs-o-up"></i>No Tasks for now! <i class="fa fa-smile-o"></i></h3>  <!-- No task header -->
 
@@ -84,6 +85,8 @@
 	{% endverbatim %}
 	<!-- Javascript includes -->
 	<script src="../static/js/angular.js"></script>
+	<script src="../static/js/angular-route.js"></script>
+	<script src="../static/js/angular-cookies.js"></script>
 	<script src="../static/js/todo.js"></script>
 	
 </body>

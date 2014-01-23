@@ -9,8 +9,13 @@ from todoapp.models import Todo
 
 VALID_ORDERING_FIELDS = ["priority","id"]
 
+
 def index(request):
     return render_to_response('index.html')
+
+def login(request):
+    return render_to_response('login.html')
+
 
 def apply_filtering(objects, request):
     if not objects:

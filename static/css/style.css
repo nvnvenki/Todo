@@ -9,6 +9,18 @@ i
 	margin-right: 10px;
 }
 
+small#logout
+{
+	font-weight: 900;
+	float: right;
+}
+
+small#logout:hover
+{
+	cursor: pointer;
+	text-decoration: underline;
+	;
+}
 header
 {
 	text-align: center;
