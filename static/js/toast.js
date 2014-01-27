@@ -50,9 +50,9 @@ Toast.prototype.makeToast = function()
 	.text(this.toast_text)
 	.fadeIn({
 
-		duration:900,
+		duration:3000,
 		complete:function(){
-			$toast.fadeOut(2000);
+			$toast.fadeOut(3000);
 			$toast.remove();
 		}
 

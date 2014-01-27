@@ -4,10 +4,10 @@ var todoApp = angular.module('todo',['ngRoute', 'ngCookies'])
 
 todoApp.controller('todoController',function($scope, $http, $window, $cookies){
 	console.log("In todoController")
-
+	
 	if(!$cookies.users)
 	{
-		$window.location.href = '/'
+		$window.location.href = '/?logout=true'
 	}
 
 
@@ -19,7 +19,7 @@ todoApp.controller('todoController',function($scope, $http, $window, $cookies){
 	}
 	else
 	{
-		$window.location.href = '/'
+		$window.location.href = '/?logout=true'
 	}
 		
 	$scope.todos = []

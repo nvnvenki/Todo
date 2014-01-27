@@ -5,18 +5,21 @@
 
  	$scope.showSignin = "show"
 	$scope.showSignup = "hide"
-	
 
 	var queryString = $window.location.href.match(/^[^?]+\??([^#]*).*$/)[1]
-
+	
 	logout_status = queryString.split("=")
 	
-	if($cookies.users && logout_status != "true")
+	if(logout_status[1] == "true")
 	{
-		$window.location.href = 'home/?user=' + $cookies.users	
+		delete $cookies.users
 	}
 	
-	delete $cookies.users
+	if($cookies.users)
+	{
+		$window.location.href = 'home/?user=' + $cookies.users		
+	}
+	
 
 	$scope.showSigninSignUp = function(){
 		$scope.showSignin = $scope.showSignin == "hide" ? "show" : "hide" 
@@ -31,8 +34,9 @@
 		success(function(response){
 			if(response['password'] == $scope.password)
 			{
+				delete $cookies.users
 				$cookies.users = $scope.username
-				$window.location.href = 'home/?user=' + $scope.username	
+				$window.location.href = 'home/?user=' + $scope.username
 			}
 			else
 			{
@@ -55,6 +59,8 @@
 		    data:  JSON.stringify({username : $scope.username_new , password:$scope.password_new})
 		}).
 		success(function(response){
+			delete $cookies.users
+			$cookies.users = $scope.username_new
 			$window.location.href = 'home/?user=' + $scope.username_new
 		}).
 		error(function(response){
